@@ -41,6 +41,34 @@ header {
     text-align: center;
 }
 
+.hero-button {
+    max-width: 270px;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4em;
+    padding: 0.4em 1em;
+    font-size: 1.5em;
+    background-color: rgba(231, 53, 41, 0.997);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: rgba(200, 40, 30, 0.997);
+}
+
+.hero-button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8em;
+}
+
 /* Meny över bilden */
 nav {
     top: 0;
