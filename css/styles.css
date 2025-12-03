@@ -1,0 +1,45 @@
+header {
+    height: 750px;
+    overflow: hidden;
+}
+
+/* Bakgrundsbilden */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    display: block;
+}
+
+/* Meny över bilden */
+nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* lätt genomskinlig */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logotyp */
+.logo {
+    height: 140px;
+}
+
+/* Menyns lista */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 2em;
+    display: flex;
+    gap: 4em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
