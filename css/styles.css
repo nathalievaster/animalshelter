@@ -116,13 +116,21 @@ nav a:hover::after {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: black;
+    background-color: white;
     margin: 5px 0;
     transition: 0.3s ease-in-out;
 }
 
 /* Mobil-läge */
 @media (max-width: 768px) {
+    .hero {
+        height: 330px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+        bottom: 2em;
+    }
 
     /* visa hamburgaren uppe till höger */
     .menu-toggle {
@@ -141,7 +149,7 @@ nav a:hover::after {
         display: block;
         width: 28px;
         height: 3px;
-        background: black;
+        background: white;
         margin: 5px 0;
         transition: 0.3s ease;
     }
