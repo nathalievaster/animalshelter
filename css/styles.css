@@ -70,7 +70,125 @@ nav ul {
 }
 
 nav ul li a {
+    display: inline-block;
     text-decoration: none;
     color: black;
     font-weight: 600;
+    transition: transform .4s;
+}
+
+nav ul li a:hover {
+    color: rgba(40, 40, 40, 0.725);
+    transform: scale(1.1);
+}
+
+/* Underline-animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: rgba(40, 40, 40, 0.725);
+    transform: translateX(-50%);
+    transition: width 0.4s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HAMBURGERKNAPP */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.3s ease-in-out;
+}
+
+/* Mobil-läge */
+@media (max-width: 768px) {
+
+    /* visa hamburgaren uppe till höger */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        padding: 10px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: black;
+        margin: 5px 0;
+        transition: 0.3s ease;
+    }
+
+    /* Själva drawer-menyn – STÄNGD som default */
+    nav {
+        position: fixed;
+        height: 100vh;
+        width: min(80vw, 320px);
+        background: rgba(255, 255, 255, 0.97);
+        transition: transform 0.35s ease;
+        z-index: 1000;
+        padding: 6rem 2rem 2rem;
+        display: none;
+        right: 0;
+        left: auto;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    /* hamburgaren blir X när menyn är öppen */
+    body.menu-open .menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    body.menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.menu-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
