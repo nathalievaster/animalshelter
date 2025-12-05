@@ -221,6 +221,7 @@ nav a:hover::after {
     /* hamburgaren blir X när menyn är öppen */
     body.menu-open .menu-toggle span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
+        background-color: #527235;
     }
 
     body.menu-open .menu-toggle span:nth-child(2) {
@@ -229,6 +230,11 @@ nav a:hover::after {
 
     body.menu-open .menu-toggle span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+        background-color:#527235;
+    }
+
+    .hero-button {
+        display: none;
     }
 }
 
@@ -378,4 +384,119 @@ footer {
     color: white;
     font-size: 1.1em;
 
+}
+
+/* Tablet-layout (ca iPad & mindre laptops) */
+@media (max-width: 960px) {
+
+    /* Intro + bild */
+    .grid-container {
+        grid-template-columns: 1fr;
+        margin-top: 6em;
+    }
+
+    .intro {
+        padding: 0 2rem 2rem;
+        text-align: left;
+    }
+
+    /* Större contentyta, smalare sidebar */
+    .big-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        grid-template-columns: 1fr;
+        margin: 1.5em 0;
+        padding: 1.5em;
+    }
+
+    .feature-content {
+        padding: 1.5rem 0 0;
+        margin-left: 0;
+        max-width: none;
+    }
+
+    /* Sidebar fortfarande till höger men ej superklistrad */
+    .news {
+        position: static;
+    }
+}
+
+/* Mobil-läge */
+@media (max-width: 768px) {
+
+    /* Intro + bild */
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 4em;
+        padding: 0 1.25rem;
+    }
+
+    .intro {
+        padding: 0;
+        font-size: 1.05em;
+        line-height: 1.6;
+    }
+
+    .image-start {
+        max-height: 340px;
+    }
+
+    /* Feature + news under varandra */
+    .big-grid {
+        grid-template-columns: 1fr;
+        margin: 2.5rem auto 3rem;
+        padding: 0 1.25rem;
+    }
+
+    .features {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .feature-card {
+        grid-template-columns: 1fr;
+        padding: 1.25em;
+        margin: 1em 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-card img {
+        height: 420px;
+    }
+
+    .feature-content {
+        padding: 1rem 0 0;
+        margin-left: 0;
+        max-width: none;
+    }
+
+    .feature-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-btn {
+        font-size: 1rem;
+    }
+
+    .news {
+        grid-column: 1;
+        grid-row: 2;
+        position: static;
+        margin-top: 2rem;
+        max-width: 60%;
+    }
+
+    .news img {
+        max-height: 450px;
+        width: auto;
+    }
+    footer {
+        margin-top: 3rem;
+        font-size: 1rem;
+        padding: 1.5rem 1rem;
+    }
 }
