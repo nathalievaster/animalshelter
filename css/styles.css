@@ -366,3 +366,14 @@ nav a:hover::after {
     line-height: 1.6;
     color: #333;
 }
+
+footer {
+    background-color: #1d430b;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top-right-radius: 20em;
+    color: white;
+    font-size: 1.1em;
+
+}
