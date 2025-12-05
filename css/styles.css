@@ -1,3 +1,6 @@
+body {
+    background-color: rgba(248, 248, 233, 0.751);
+}
 header {
     position: relative;
 }
@@ -55,11 +58,13 @@ header {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease , transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 .hero-button:hover {
     background-color: rgba(200, 40, 30, 0.997);
+    transform: translateX(-50%) scale(1.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 .hero-button a {
@@ -74,13 +79,11 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* lätt genomskinlig */
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 /* Logotyp */
@@ -100,7 +103,7 @@ nav ul {
 nav ul li a {
     display: inline-block;
     text-decoration: none;
-    color: black;
+    color: #527235;
     font-weight: 600;
     transition: transform .4s;
 }
@@ -272,10 +275,9 @@ nav a:hover::after {
 .feature-card {
     display: grid;
     grid-template-columns: 240px 1fr;
-    background: white;
-    border-radius: 1.4rem;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.997);
+    padding: 2em;
     margin: 2em;
 }
 
@@ -348,7 +350,7 @@ nav a:hover::after {
 .news-item+.news-item {
     margin-top: 1.25rem;
     padding-top: 1.25rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-top: 1px solid rgba(0, 0, 0, 0.997);
 }
 
 .news img {
@@ -368,7 +370,7 @@ nav a:hover::after {
 }
 
 footer {
-    background-color: #1d430b;
+    background-color: #527235;
     padding: 2rem;
     text-align: center;
     margin-top: 4rem;
