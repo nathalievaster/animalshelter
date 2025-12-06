@@ -117,6 +117,7 @@ nav ul li a {
     color: #527235;
     font-weight: 600;
     transition: transform .4s;
+    position: relative;
 }
 
 nav ul li a:hover {
@@ -137,7 +138,8 @@ nav a::after {
     transition: width 0.4s ease-in-out;
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a.active::after {
     width: 100%;
 }
 
@@ -163,138 +165,6 @@ nav a:hover::after {
     transition: 0.3s ease-in-out;
 }
 
-/* ========= LAYOUT – MAIN ========= */
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 10em;
-}
-
-.intro {
-    padding: 10%;
-    line-height: 1.7em;
-    font-size: 1.2em;
-}
-
-.image-start {
-    width: 100%;
-    max-height: 550px;
-    object-fit: cover;
-}
-
-.big-grid {
-    margin: 3rem auto 4rem;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr); /* innehåll | sidebar */
-    column-gap: 1rem;
-    align-items: flex-start;
-}
-
-.features {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.feature-card {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.997);
-    padding: 2em;
-    margin: 2em;
-}
-
-/* Bilddelen */
-.feature-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Textdelen */
-.feature-content {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 400px;
-    margin-left: 4em;
-}
-
-.feature-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.6rem;
-    font-family: "Cantata One", serif;
-}
-
-.feature-content p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-    color: #333;
-}
-
-/* Knappen */
-.feature-btn {
-    align-self: flex-start;
-    padding: 0.5rem 1.4rem;
-    border-radius: 2em;
-    background: rgba(231, 53, 41, 0.997);
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: background 0.4s ease, transform 0.4s ease;
-}
-
-.feature-btn:hover {
-    background: rgba(200, 40, 30, 0.997);
-    transform: scale(1.05);
-}
-
-/* News/sidebar */
-.news {
-    grid-column: 2;
-    position: sticky;
-    align-self: flex-start;
-    border-radius: 1.2rem;
-    width: 100%;
-    grid-row: 1;
-}
-
-.news h2 {
-    font-size: 1.9rem;
-    margin-bottom: 1rem;
-    font-family: "Cantata One", serif;
-    font-weight: 400;
-}
-
-.news-item + .news-item {
-    margin-top: 1.25rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.997);
-}
-
-.news img {
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-.news-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.news-item p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #333;
-}
-
 /* Footer */
 footer {
     background-color: #527235;
@@ -306,45 +176,6 @@ footer {
     font-size: 1.1em;
 }
 
-/* ========= TABLET (≤ 960px) ========= */
-
-@media (max-width: 960px) {
-
-    /* Intro + bild */
-    .grid-container {
-        grid-template-columns: 1fr;
-        margin-top: 6em;
-    }
-
-    .intro {
-        padding: 0 2rem 2rem;
-        text-align: left;
-    }
-
-    /* Större contentyta, smalare sidebar */
-    .big-grid {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-        padding: 0 1rem;
-    }
-
-    .feature-card {
-        grid-template-columns: 1fr;
-        margin: 1.5em 0;
-        padding: 1.5em;
-    }
-
-    .feature-content {
-        padding: 1.5rem 0 0;
-        margin-left: 0;
-        max-width: none;
-    }
-
-    /* Sidebar fortfarande till höger men ej superklistrad */
-    .news {
-        position: static;
-    }
-}
-
 /* ========= MOBIL (≤ 768px) ========= */
 
 @media (max-width: 768px) {
@@ -352,7 +183,7 @@ footer {
     /* HERO */
     .hero {
         height: 330px;
-        margin-top: 72px; /* samma som topbar-höjd */
+        margin-top: 72px;
     }
 
     .hero h1 {
@@ -364,7 +195,6 @@ footer {
         display: none;
     }
 
-    /* --- TOPBAR --- */
     .topbar {
         position: fixed;
         top: 0;
@@ -448,67 +278,8 @@ footer {
         color: #527235;
     }
 
-    /* Intro + bild */
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 4em;
-        padding: 0 1.25rem;
-    }
-
-    .intro {
-        padding: 0;
-        font-size: 1.05em;
-        line-height: 1.6;
-    }
-
-    .image-start {
-        max-height: 340px;
-    }
-
-    /* Feature + news under varandra */
-    .big-grid {
-        grid-template-columns: 1fr;
-        margin: 2.5rem auto 3rem;
-        padding: 0 1.25rem;
-    }
-
-    .feature-card {
-        grid-template-columns: 1fr;
-        padding: 1.25em;
-        margin: 1em 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    .feature-card img {
-        height: 420px;
-    }
-
-    .feature-content {
-        padding: 1rem 0 0;
-        margin-left: 0;
-        max-width: none;
-    }
-
-    .feature-content h3 {
-        font-size: 1.3rem;
-    }
-
     .feature-btn {
         font-size: 1rem;
-    }
-
-    .news {
-        grid-column: 1;
-        grid-row: 2;
-        position: static;
-        margin-top: 2rem;
-        max-width: 60%;
-    }
-
-    .news img {
-        max-height: 450px;
-        width: auto;
     }
 
     footer {
@@ -524,4 +295,22 @@ footer {
     footer {
         border-top-right-radius: 0;
     }
+}
+
+/* Knappen */
+.feature-btn {
+    align-self: flex-start;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2em;
+    background: rgba(231, 53, 41, 0.997);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.feature-btn:hover {
+    background: rgba(200, 40, 30, 0.997);
+    transform: scale(1.05);
 }

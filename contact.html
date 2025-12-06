@@ -15,30 +15,38 @@
 
 <body>
     <header>
-        <nav>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Logotyp med en tass och en hov" class="logo">
-            </a>
-            <ul>
-                <li><a href="index.html">Startsida</a></li>
-                <li><a href="adoption.html">Adoption</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
 
+    <!-- Alltid synlig topp-bar på mobil -->
+    <div class="topbar">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Logotyp med en tass och en hov" class="logo">
+        </a>
 
         <button class="menu-toggle" aria-label="Öppna meny" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
+    </div>
 
-        <div class="hero">
-            <img src="images/foalonfield.JPEG" alt="En man matar ett föl på en äng" class="hero-img">
-            <h1>Kom i kontakt med oss</h1>
-            <button class="hero-button"><a href="adoption.html">Swisha en gåva</a></button>
-        </div>
-    </header>
+    <!-- Själva menyn (drawer) -->
+    <nav>
+        <a href="index.html" class="nav-logo-desktop">
+            <img src="images/logo.png" alt="Logotyp med en tass och en hov" class="logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="contact.html" class="active">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="images/foalonfield.JPEG" alt="En man matar ett föl på en äng" class="hero-img">
+        <h1>Kom i kontakt med oss!</h1>
+        <button class="hero-button"><a href="adoption.html">Swisha en gåva</a></button>
+    </div>
+</header>
     <div class="menu-backdrop"></div>
 
         <main class="contact-page">
