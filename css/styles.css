@@ -64,12 +64,14 @@ header {
     transform: translateX(-50%);
     bottom: 4em;
     padding: 0.4em 1em;
-    font-size: 1.5em;
     background-color: rgba(231, 53, 41, 0.997);
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+    color: white;
+    font-weight: 550;
+    font-size: 1.4em;
 }
 
 .hero-button:hover {
@@ -78,12 +80,6 @@ header {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-.hero-button a {
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    font-size: 0.8em;
-}
 
 /* Meny (desktop) */
 nav {
