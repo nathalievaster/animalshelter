@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Svenska Djurhem</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cantata+One&display=swap" rel="stylesheet">
@@ -38,8 +39,60 @@
             <button class="hero-button"><a href="adoption.html">Swisha en gåva</a></button>
         </div>
     </header>
-
     <div class="menu-backdrop"></div>
+
+        <main class="contact-page">
+
+        <!-- Intro -->
+        <section class="contact-hero">
+            <h1>Kontakta oss</h1>
+            <p>
+                Har du frågor om adoption, volontärarbete eller vill du bara komma i kontakt med oss?
+                Skicka ett meddelande så återkommer vi så snart vi kan.
+            </p>
+        </section>
+
+        <!-- Formulär + kontaktinfo -->
+        <section class="contact-grid">
+
+            <!-- Kontaktformulär -->
+            <form class="contact-form">
+                <h2>Skicka ett meddelande</h2>
+
+                <label for="name">Namn</label>
+                <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+
+                <label for="email">E-post</label>
+                <input type="email" id="email" name="email" placeholder="din@email.se" required>
+
+                <label for="subject">Ämne</label>
+                <input type="text" id="subject" name="subject" placeholder="Vad gäller ditt ärende?" required>
+
+                <label for="message">Meddelande</label>
+                <textarea id="message" name="message" rows="6" placeholder="Skriv ditt meddelande här..." required></textarea>
+
+                <button type="submit" class="feature-btn">Skicka meddelande</button>
+            </form>
+
+            <!-- Kontaktuppgifter -->
+            <div class="contact-info">
+                <h2>Våra uppgifter</h2>
+                <p><strong>Svenska Djurhem</strong></p>
+                <p>Djurgårdsvägen 12<br>123 45 Stockholm</p>
+
+                <p><strong>Telefon:</strong><br>08-123 45 67</p>
+                <p><strong>E-post:</strong><br>info@svenskadjurhem.se</p>
+
+                <p><strong>Öppettider:</strong><br>
+                    Mån–Fre: 10.00–17.00<br>
+                    Lör: 11.00–14.00
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
 
     <footer>
         <p>&copy; 2024 Svenska Djurhem. Alla rättigheter förbehållna.</p>

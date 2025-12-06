@@ -498,5 +498,12 @@ footer {
         margin-top: 3rem;
         font-size: 1rem;
         padding: 1.5rem 1rem;
+        border-top-right-radius: 10em;
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        border-top-right-radius: 0;
     }
 }
