@@ -1,10 +1,21 @@
 body {
     background-color: rgba(248, 248, 233, 0.751);
 }
+
 header {
     position: relative;
 }
 
+/* Topbar används bara på mobil */
+.topbar {
+    display: none;
+}
+
+.nav-logo-desktop {
+    display: inline-block;
+}
+
+/* HERO */
 .hero {
     position: relative;
     height: 650px;
@@ -34,7 +45,6 @@ header {
     z-index: 10;
     color: white;
     font-size: 4.5em;
-    align-items: center;
     left: 50%;
     transform: translateX(-50%);
     bottom: 4em;
@@ -44,6 +54,7 @@ header {
     text-align: center;
 }
 
+/* Hero-knapp */
 .hero-button {
     max-width: 270px;
     height: auto;
@@ -58,13 +69,13 @@ header {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.5s ease , transform 0.5s ease, box-shadow 0.3s ease;
+    transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 .hero-button:hover {
     background-color: rgba(200, 40, 30, 0.997);
     transform: translateX(-50%) scale(1.12);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-button a {
@@ -74,7 +85,7 @@ header {
     font-size: 0.8em;
 }
 
-/* Meny över bilden */
+/* Meny (desktop) */
 nav {
     top: 0;
     left: 0;
@@ -130,7 +141,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* HAMBURGERKNAPP */
+/* HAMBURGERKNAPP (desktop: dold) */
 .menu-toggle {
     display: none;
     position: absolute;
@@ -147,99 +158,12 @@ nav a:hover::after {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: white;
+    background-color: #527235;
     margin: 5px 0;
     transition: 0.3s ease-in-out;
 }
 
-/* Mobil-läge */
-@media (max-width: 768px) {
-    .hero {
-        height: 330px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-        bottom: 2em;
-    }
-
-    /* visa hamburgaren uppe till höger */
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        padding: 10px;
-        z-index: 1100;
-        cursor: pointer;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 28px;
-        height: 3px;
-        background: white;
-        margin: 5px 0;
-        transition: 0.3s ease;
-    }
-
-    /* Själva drawer-menyn – STÄNGD som default */
-    nav {
-        position: fixed;
-        height: 100vh;
-        width: min(80vw, 320px);
-        background: rgba(255, 255, 255, 0.97);
-        transition: transform 0.35s ease;
-        z-index: 1000;
-        padding: 6rem 2rem 2rem;
-        display: none;
-        right: 0;
-        left: auto;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin: 0;
-        padding: 0;
-        text-align: left;
-    }
-
-    nav a {
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-    }
-
-    nav.open {
-        display: block;
-    }
-
-    /* hamburgaren blir X när menyn är öppen */
-    body.menu-open .menu-toggle span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        background-color: #527235;
-    }
-
-    body.menu-open .menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    body.menu-open .menu-toggle span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color:#527235;
-    }
-
-    .hero-button {
-        display: none;
-    }
-}
-
-
-
+/* ========= LAYOUT – MAIN ========= */
 
 .grid-container {
     display: grid;
@@ -261,13 +185,11 @@ nav a:hover::after {
     object-fit: cover;
 }
 
-
 .big-grid {
     margin: 3rem auto 4rem;
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
-    /* innehåll | sidebar */
+    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr); /* innehåll | sidebar */
     column-gap: 1rem;
     align-items: flex-start;
 }
@@ -276,7 +198,6 @@ nav a:hover::after {
     grid-column: 1;
     grid-row: 1;
 }
-
 
 .feature-card {
     display: grid;
@@ -335,7 +256,7 @@ nav a:hover::after {
     transform: scale(1.05);
 }
 
-
+/* News/sidebar */
 .news {
     grid-column: 2;
     position: sticky;
@@ -343,7 +264,6 @@ nav a:hover::after {
     border-radius: 1.2rem;
     width: 100%;
     grid-row: 1;
-
 }
 
 .news h2 {
@@ -353,7 +273,7 @@ nav a:hover::after {
     font-weight: 400;
 }
 
-.news-item+.news-item {
+.news-item + .news-item {
     margin-top: 1.25rem;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(0, 0, 0, 0.997);
@@ -375,6 +295,7 @@ nav a:hover::after {
     color: #333;
 }
 
+/* Footer */
 footer {
     background-color: #527235;
     padding: 2rem;
@@ -383,10 +304,10 @@ footer {
     border-top-right-radius: 20em;
     color: white;
     font-size: 1.1em;
-
 }
 
-/* Tablet-layout (ca iPad & mindre laptops) */
+/* ========= TABLET (≤ 960px) ========= */
+
 @media (max-width: 960px) {
 
     /* Intro + bild */
@@ -424,8 +345,108 @@ footer {
     }
 }
 
-/* Mobil-läge */
+/* ========= MOBIL (≤ 768px) ========= */
+
 @media (max-width: 768px) {
+
+    /* HERO */
+    .hero {
+        height: 330px;
+        margin-top: 72px; /* samma som topbar-höjd */
+    }
+
+    .hero h1 {
+        font-size: 2em;
+        bottom: 2em;
+    }
+
+    .hero-button {
+        display: none;
+    }
+
+    /* --- TOPBAR --- */
+    .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 72px;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.2rem;
+        background-color: rgb(248, 248, 233);
+    }
+
+    .topbar .logo {
+        height: 52px;
+    }
+
+    /* Hamburgaren inne i topbaren */
+    .menu-toggle {
+        display: block;
+        position: static;
+        background: #527235;
+        border-radius: 999px;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        background-color: #ffffff;
+    }
+
+    /* hamburgaren blir X när menyn är öppen */
+    body.menu-open .menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    body.menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.menu-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- NAV SOM DRAWER --- */
+    nav {
+        position: fixed;
+        height: 100vh;
+        width: min(80vw, 320px);
+        background: rgb(248, 248, 233);
+        transition: transform 0.35s ease;
+        z-index: 1000;
+        padding: 6rem 2rem 2rem;
+        display: none;
+        right: 0;
+        left: auto;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    /* Döljer loggan inne i nav på mobil – vi använder topbar-loggan istället */
+    .nav-logo-desktop {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #527235;
+    }
 
     /* Intro + bild */
     .grid-container {
@@ -450,11 +471,6 @@ footer {
         grid-template-columns: 1fr;
         margin: 2.5rem auto 3rem;
         padding: 0 1.25rem;
-    }
-
-    .features {
-        grid-column: 1;
-        grid-row: 1;
     }
 
     .feature-card {
@@ -494,6 +510,7 @@ footer {
         max-height: 450px;
         width: auto;
     }
+
     footer {
         margin-top: 3rem;
         font-size: 1rem;
@@ -502,6 +519,7 @@ footer {
     }
 }
 
+/* Extra liten mobil */
 @media (max-width: 500px) {
     footer {
         border-top-right-radius: 0;
