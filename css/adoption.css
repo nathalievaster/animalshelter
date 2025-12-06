@@ -1,0 +1,287 @@
+.adoption-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* Intro / Hero */
+.adoption-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.adoption-hero h1 {
+    font-family: "Cantata One", serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.adoption-hero p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* =========================
+   VARFÖR ADOPTERA
+========================= */
+
+.adoption-why h2,
+.adoption-process h2,
+.adoption-animals h2,
+.adoption-info h2 {
+    font-family: "Cantata One", serif;
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.adoption-why ul {
+    display: grid;
+    gap: 1rem;
+    max-width: 700px;
+}
+
+.adoption-why li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.adoption-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.adoption-why-content ul {
+    margin-top: 1rem;
+    padding: 1.2em;
+}
+
+.adoption-why-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+    .adoption-why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .adoption-why-image img {
+        max-height: 240px;
+    }
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.adoption-process ol {
+    max-width: 800px;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.adoption-process li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   ADOPTIONSKORT
+========================= */
+
+.adoption-animals {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.adoption-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 2.5rem;
+    max-width: 900px;
+}
+
+.adoption-img {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.adoption-content h3 {
+    font-family: "Cantata One", serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.adoption-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.adoption-content ul {
+    margin-bottom: 3rem;
+}
+
+.adoption-content li {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+/* =========================
+   INFO + AVGIFTER
+========================= */
+
+.adoption-info {
+    max-width: 800px;
+    line-height: 1.7em;
+}
+
+.adoption-info p {
+    margin-bottom: 1.6rem;
+    font-size: 1.05em;
+}
+
+.adoption-info ul {
+    margin-bottom: 2rem;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.adoption-info li {
+    font-size: 1rem;
+}
+
+.adoption-info h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+}
+
+.adoption-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+    .adoption-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .adoption-info,
+    .adoption-process {
+        padding: 2rem 1.5rem 2.5rem;
+    }
+}
+
+/* =========================
+   CTA-DEL
+========================= */
+
+.adoption-cta {
+    background: #527235;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.adoption-cta h2 {
+    font-family: "Cantata One", serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.adoption-cta p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   MOBILANPASSNING
+========================= */
+
+@media (max-width: 768px) {
+
+    .adoption-page {
+        padding: 3rem 1.25rem;
+        gap: 3.5rem;
+    }
+
+    .adoption-hero h1 {
+        font-size: 2rem;
+    }
+
+    .adoption-hero p {
+        font-size: 1rem;
+    }
+
+    .adoption-why h2,
+    .adoption-process h2,
+    .adoption-animals h2,
+    .adoption-info h2 {
+        font-size: 1.7rem;
+    }
+
+    .adoption-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .adoption-img {
+        max-height: 240px;
+    }
+
+    .adoption-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .adoption-content p {
+        font-size: 1rem;
+    }
+
+    .adoption-cta {
+        padding: 3rem 1.5rem;
+        border-radius: 1.2rem;
+    }
+
+    .adoption-cta h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .adoption-card {
+        grid-template-columns: 260px 1fr;
+        gap: 2rem;
+    }
+}
